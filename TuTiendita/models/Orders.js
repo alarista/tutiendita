@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Orders extends Model {}
-// id, products, quantity, ordervalue, idcustomer
+// id, order_number, status, customer_id
 Orders.init(
     {
         id:{

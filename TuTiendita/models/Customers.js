@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 class Customers extends Model {}
-// id, name, mail, password
+// id, first_name, last_name, address1. address2, city, state, postal_code, phone, email, password
 Customers.init(
     {
         id:{
