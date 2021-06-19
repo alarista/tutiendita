@@ -77,4 +77,6 @@ Customers.init(
         underscored: true,
         modelName: 'customers',
     }
-)
+);
+
+module.exports = Customers;

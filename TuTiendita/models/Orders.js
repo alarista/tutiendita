@@ -35,4 +35,6 @@ Orders.init(
         underscored: true,
         modelName: 'orders',
     }
-)
+);
+
+module.exports = Orders;
