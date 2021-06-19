@@ -50,4 +50,6 @@ Order_Details.init(
         underscored: true,
         modelName: 'order_details',
     }
-)
+);
+
+module.exports = Order_Details;
