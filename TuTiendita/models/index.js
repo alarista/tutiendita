@@ -65,4 +65,7 @@ module.exports = {
   Products,
   StoreOwner,
   Category,
+  Customers,
+  Order_Details,
+  Orders,
 };
