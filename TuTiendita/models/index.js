@@ -22,7 +22,7 @@ Product.belongsTo(StoreOwner, {
 
 // StoreOwner have many Products
 StoreOwner.hasMany(Product, {
-  foreignKey: 'products_id',
+  foreignKey: 'storeOwner_id',
 });
 
 // Define customer_id FK relationship
@@ -43,15 +43,6 @@ Product.hasMany(Order_Details, {
     foreignKey: 'product_id',
 });
 
-// Define product_price FK relationship
-Order_Details.belongsTo(Product, {
-    foreignKey: 'product_price',
-});
-
-Product.hasMany(Order_Details, {
-    foreignKey: 'product_price',
-});
-
 // Define order_id FK relationship
 Order_Details.belongsTo(Orders, {
     foreignKey: 'order_id',
@@ -60,6 +51,8 @@ Order_Details.belongsTo(Orders, {
 Orders.hasMany(Order_Details, {
     foreignKey: 'order_id',
 });
+
+
 
 module.exports = {
   Product,

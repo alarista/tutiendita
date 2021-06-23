@@ -45,7 +45,6 @@ const customersData = [
         email:'Erick@gmail.com',
         password:'erick1234',
     },
-
 ];
 
 const seedCustomers = () => Customers.bulkCreate(customersData);
