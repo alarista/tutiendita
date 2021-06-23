@@ -12,20 +12,6 @@ Order_Details.init(
             autoIncrement: true,
             unique: true,
         },
-        product_id:{
-            type: DataTypes.INTEGER,
-            references:{
-                model: 'products',
-                key: 'id',
-            }
-        },
-        product_price:{
-            type: DataTypes.INTEGER,
-            references:{
-                model: 'products',
-                key: 'price',
-            }
-        },
         quantity:{
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -35,6 +21,13 @@ Order_Details.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0,
+        },
+        product_id:{
+            type: DataTypes.INTEGER,
+            references:{
+                model: 'product',
+                key: 'id',
+            }
         },
         order_id:{
             type: DataTypes.INTEGER,

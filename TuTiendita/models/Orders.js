@@ -12,10 +12,6 @@ Orders.init(
             autoIncrement: true,
             unique: true,
         },
-        order_number:{
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
         status:{
             type: DataTypes.STRING,
             allowNull: false,
@@ -28,6 +24,13 @@ Orders.init(
                 key: 'id',
             }
         },
+        store_owner_id:{
+            type: DataTypes.INTEGER,
+            references:{
+                model: 'storeOwner',
+                key: 'id',
+            }
+        }
     },
     {
         sequelize,

@@ -45,13 +45,13 @@ StoreOwner.init(
           len: [8],
         },
       },
-    order_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'orders',
-          key: 'id',
-        },
-    }
+    // order_id: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //       model: 'orders',
+    //       key: 'id',
+    //     },
+    // }
   },
   {
     hooks: {
@@ -68,7 +68,7 @@ StoreOwner.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'StoreOwner',
+    modelName: 'storeOwner',
   }
 );
 

@@ -1,27 +1,27 @@
 // import models
-const Products = require('./Products');
-const StoreOwner = require('./Category');
-const Category = require('./Category');
+const Product = require('./Product');
+const StoreOwner = require('./StoreOwner');
+// const Category = require('./Category');
 
 const Customers = require('./Customers');
 const Orders = require('./Orders');
 const Order_Details = require('./Order_Details');
 
 // Products belongsTo Category
-Products.belongsTo(Category, {
-    foreignKey: 'category_id',
-});
-// Categories have many Products
-Category.hasMany(Products, {
-    foreignKey: 'category_id',
-});
+// Product.belongsTo(Category, {
+//     foreignKey: 'category_id',
+// });
+// // Categories have many Products
+// Category.hasMany(Product, {
+//     foreignKey: 'category_id',
+// });
 // Products belongsTo StoreOwner
-Products.belongsTo(StoreOwner, {
+Product.belongsTo(StoreOwner, {
   foreignKey: 'storeOwner_id',
 });
 
 // StoreOwner have many Products
-StoreOwner.hasMany(Products, {
+StoreOwner.hasMany(Product, {
   foreignKey: 'products_id',
 });
 
@@ -35,20 +35,20 @@ Customers.hasMany(Orders, {
 });
 
 // Define product_id FK relationship
-Order_Details.belongsTo(Products, {
+Order_Details.belongsTo(Product, {
     foreignKey: 'product_id',
 });
 
-Products.hasMany(Order_Details, {
+Product.hasMany(Order_Details, {
     foreignKey: 'product_id',
 });
 
 // Define product_price FK relationship
-Order_Details.belongsTo(Products, {
+Order_Details.belongsTo(Product, {
     foreignKey: 'product_price',
 });
 
-Products.hasMany(Order_Details, {
+Product.hasMany(Order_Details, {
     foreignKey: 'product_price',
 });
 
@@ -62,9 +62,9 @@ Orders.hasMany(Order_Details, {
 });
 
 module.exports = {
-  Products,
+  Product,
   StoreOwner,
-  Category,
+//   Category,
   Customers,
   Order_Details,
   Orders,

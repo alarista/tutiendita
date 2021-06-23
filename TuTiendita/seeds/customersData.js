@@ -4,9 +4,9 @@ const customersData = [
     {
         first_name:'Alsynoe',
         last_name:'Arista',
-        address1:'Rio Panuco #76, Cuauhtemoc',
-        city:'Ciudad de Mexico',
-        state:'Ciudad de Mexico',
+        address1:'Av. Revolución 2703 R-07 A',
+        city:'Monterrey',
+        state:'Nuevo Leon',
         postal_code:'06500',
         phone:'5575329858',
         email:'Alsynoe@gmail.com',
