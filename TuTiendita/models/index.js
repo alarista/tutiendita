@@ -16,9 +16,14 @@ Products.belongsTo(StoreOwner, {
   foreignKey: 'storeOwner_id',
 });
 
-// StoreOwner have many Products
+// StoreOwner has many Products
 StoreOwner.hasMany(Products, {
   foreignKey: 'products_id',
+});
+
+// StoreOwner has many Category
+StoreOwner.hasMany(Category, {
+  foreignKey: 'category_id',
 });
 
 module.exports = {

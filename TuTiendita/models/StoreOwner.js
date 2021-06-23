@@ -55,13 +55,15 @@ StoreOwner.init(
   },
   {
     hooks: {
-      beforeCreate: async (newStoreOwnerData) => {
-        newStoreOwnerData.password = await bcrypt.hash(newStoreOwnerData.password, 10);
-        return newStoreOwnerData;
-      }, 
-      beforeUpdate: async (updatedStoreOwnerData) => {
-        updatedStoreOwnerData.password = await bcrypt.hash(updatedStoreOwnerData.password, 10);
-        return updatedStoreOwnerData;
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        if (updatedUserData.password) {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        }
+        return updatedUserData;
       },
     },
     sequelize,
