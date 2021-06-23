@@ -18,7 +18,7 @@ Order_Details.init(
             defaultValue: 0,
         },
         total:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false,
             defaultValue: 0,
         },
