@@ -1,6 +1,5 @@
 const router = require('express').Router();
-
-const { Example, Product } = require('../models');
+const { Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -22,33 +21,5 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-router.get('/products', async(req,res)=>{
-    try {
-      const productsList = await Product.findAll({
-        include: [
-          {
-            model: Product,
-            attributes: [
-              'product_name',
-              'price',
-              'category',
-              'filename',
-              'description',
-            ],
-          },
-        ],
-      });
-      const products = productsList.map((product) => 
-        product.get({plain: true}));
-        
-      res.render('products-seller', { products });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  })
-
 
 module.exports = router;
