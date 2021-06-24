@@ -1,1 +1,231 @@
 /* Styles go here */
+
+@import "bourbon";
+@import "compass";
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    background-color: var(--secondary);
+  }
+  
+  nav a {
+    color: var(--light);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  nav a:hover {
+    color: var(--secondary);
+    background-color: var(--dark);
+  }
+  
+  
+
+body {
+    background: #ccc;
+    font-family: 'Libre Franklin', sans-serif;  
+  /* Needs latest Compass, add '@import "compass"' to your scss
+  Permalink - use to edit and share this gradient:
+  http://colorzilla.com/gradient-editor/#d2eaea+0,f9f9f9+49,f9f9f9+49,f7eec3+100 */
+  background-repeat: no-repeat;
+  background-color: #d2eaea; /* Old browsers */
+  filter-gradient: #d2eaea, #f7eec3, horizontal; /* IE6-9 fallback on horizontal gradient */
+  background-image: linear-gradient(left bottom,  #d2eaea 0%,#f9f9f9 49%,#f9f9f9 49%,#f7eec3 100%);
+}
+  
+div.container {
+    position: relative;
+    margin: 70px auto;
+    width: 350px;
+    height: max-content;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1), 0px 60px 75px -25px rgba(0,0,0,0.2);
+    cursor: default;
+}
+
+    img.img-fruit {
+        width: 290px;
+        margin-top: -60px;
+    }
+  
+    div.control-btn span {
+        position: absolute;
+        margin-top: 20px;
+        width: 35px;
+        height: 35px;
+        background: #f22d34;
+        color: #fff;
+        font-size: 13px;
+        display: inline-block;
+        line-height: 36px;
+        cursor: pointer;
+        border-radius: 100%;
+        box-shadow: 0px 2px 7px rgba(241,44,51,0.7);
+        transition(background 0.3s ease-in);
+    }
+      
+    div.control-btn span:hover {
+        background: #de2128;
+    }
+    
+    span.prev {
+        left: -17.5px;
+    }
+    
+    span.next {
+        right: -17.5px;
+    }   
+        
+    h3 {
+        font-size: 30px;
+        letter-spacing: 3px;
+        margin-top: 35px;
+        color: #ea1d24;
+    }
+
+    p {
+        font-size: 11px;
+        padding: 15px 45px;
+        color: #878787;
+        line-height: 22px;
+    }
+
+    div.properties {
+        margin-top: 20px;
+        height: 130px;   
+    }
+
+    div.properties.div {
+        display: inline-block;
+        text-align: center;
+        width: 33.33%;
+        /* float: left; */
+    }            
+
+    h4 {
+        font-size: 14px;
+        color: #757575;
+        padding: 25px 0px;
+    }
+        
+.qty.fa {
+        font-size: 7px;
+        color: #757575;
+        background: #dfdfdf;
+        border-radius: 100%;
+        padding: 4px;
+        cursor: pointer;
+    }
+
+.qty.number {
+        font-size: 11px;
+        color: #757575;
+        padding: 5px;
+    }
+
+.price.fa {
+        font-size: 18px;
+        color: #757575;
+        }
+.price.amount {
+        color: #646363;
+        font-size: 18px;
+        padding: 0 5px;
+    }
+
+.delivery.fa {
+        font-size: 15px;
+        color: #757575;
+    }
+.delivery.time {
+        display: inline-block;
+        color: #757575;
+        font-size: 11px;
+    }
+
+div.properties:before, div.properties:after {
+        content: ' ';
+        display: inline-block;
+    }
+    
+div.properties:after {
+        clear: both;
+    }
+        
+.ip-add-cart {
+    border: none;
+    padding: 12px 50px;
+    background: #f22d34;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 33px;
+    border-radius: 25px;
+    box-shadow: 0px 15px 45px rgba(242,45,52,0.5);
+    cursor: pointer;
+    transition(background 0.3s ease-in);
+  }
+  
+.ip-add-cart:hover {
+      background: #da1920;
+    }
+
+
+/* Start Credit Style */
+
+div.credit {
+  position: absolute;
+  padding: 0px 10px;
+  padding-bottom: 8px;
+  height: 15px;
+  right: 10px;
+  top: 10px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 7px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px -15px rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+div.credit:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+  img {
+    position: relative;
+    width: 14px;
+    margin-left: 3px;
+    top: 4px;
+  }
+
+/* End Credit Style */
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
