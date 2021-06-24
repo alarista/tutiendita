@@ -22,8 +22,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-
 router.get('/products', async(req,res)=>{
     try {
       const productsList = await Product.findAll();
@@ -38,6 +36,4 @@ router.get('/products', async(req,res)=>{
   })
 
 
-=======
->>>>>>> 03cfcdd977caaa448a06457ae58f580db42e222d
 module.exports = router;
