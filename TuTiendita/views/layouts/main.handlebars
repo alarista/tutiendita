@@ -56,33 +56,54 @@
 
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
 
-        <li class="nav-item" id="Homepage" onclick="myFunction1()">
-          <button type="button" id="HomepageButton" class="nav-link active py-3 border-bottom" title="Homepage">
-            <i class="fas fa-store fa-2x" width="40" height="32"></i>
-          </button>
+        <li class="nav-item" id="Homepage">
+          <a href="/">
+            <button type="button" id="HomepageButton" class="nav-link active py-3 border-bottom" title="Homepage">
+              <i class="fas fa-store fa-2x" width="40" height="32"></i>
+            </button>
+          </a>
         </li>
 
         <li>
-          <button type="button" id="Login-signup" class="nav-link py-3 border-bottom" title="Login-signup">
-            <i class="fas fa-sign-in-alt fa-2x" width="34" height="26"></i>
-          </button>
+          <a href="/login">
+            <button type="button" id="Login-signup" class="nav-link py-3 border-bottom" title="Login / Sign-up">
+              <i class="fas fa-sign-in-alt fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
         </li>
 
         <li>
-          <button type="button" id="Stores" class="nav-link py-3 border-bottom" title="Stores Available">
-            <i class="fas fa-shopping-cart fa-2x" width="34" height="26"></i>
-          </button>
+          <a href="/products">
+            <button type="button" id="Stores" class="nav-link py-3 border-bottom" title="Stores Available">
+              <i class="fas fa-shopping-cart fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
         </li>
 
         <li>
-          <button type="button" id="Orders" class="nav-link py-3 border-bottom" title="Orders">
-            <i class="fas fa-clipboard-list fa-3x" width="34" height="26"></i>
-            </a>
+          <a href="/yourStore">
+            <button type="button" id="YourStore" class="nav-link py-3 border-bottom" title="Your Store">
+              <i class="fas fa-cart-plus fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
         </li>
-        
+
+        <li>
+          <a href="/orders">
+            <button type="button" id="Orders" class="nav-link py-3 border-bottom" title="Orders">
+              <i class="fas fa-clipboard-list fa-3x" width="34" height="26"></i>
+          </a>
+        </li>
+
       </ul>
 
-    {{{body}}}
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="homepagestores">
+      {{{body}}}
+    </div>
 
 </body>
 
