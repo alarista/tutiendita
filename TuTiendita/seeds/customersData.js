@@ -10,7 +10,8 @@ const customersData = [
         postal_code:'06500',
         phone:'5575329858',
         email:'Alsynoe@gmail.com',
-        password:'alsynoe1234',
+        password:'$2b$10$MWHrABDxjhhLMRHr8ElWpuu081MVn8dW0MDqc.cQ2CWUgIe9FAc2y',
+        // password:'alsynoe1234',
     },
     {
         first_name:'Sandra',
@@ -21,7 +22,8 @@ const customersData = [
         postal_code:'03330',
         phone:'5586259074',
         email:'Sandra@gmail.com',
-        password:'sandra1234',
+        password:'$2b$10$7/LN1DFo4TT/sWAoAI3ZqOo3evpxXv6KcouPxjjj/spllq23neXDW',
+        // password:'sandra1234',
     },
     {
         first_name:'Alfonso',
@@ -32,7 +34,8 @@ const customersData = [
         postal_code:'06000',
         phone:'5534527801',
         email:'Alfonso@gmail.com',
-        password:'alfonso1234',
+        password:'$2b$10$KRku1x.d57NbrPmz9ieo2uFYx423e8cK4hARzkPfHI3GV7SFoZpcq',
+        // password:'alfonso1234',
     },
     {
         first_name:'Erick',
@@ -43,7 +46,8 @@ const customersData = [
         postal_code:'80220',
         phone:'6672851438',
         email:'Erick@gmail.com',
-        password:'erick1234',
+        password:'$2b$10$he7h3/uVX39s3Xc8/rxL.u45nEjCVzH7aQ7Ldhg2dexcYkGBBVW3i',
+        // password:'erick1234',
     },
 ];
 
