@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 
 router.get('/products', async(req,res)=>{
     try {
-      const productsList = await Product.map({
+      const productsList = await Product.findAll({
         include: [
           {
             model: Product,
@@ -40,7 +40,9 @@ router.get('/products', async(req,res)=>{
           },
         ],
       });
-      const products = productsList.get({ plain: true });
+      const products = productsList.map((product) => 
+        product.get({plain: true}));
+        
       res.render('products-seller', { products });
     } catch (err) {
       console.log(err);
