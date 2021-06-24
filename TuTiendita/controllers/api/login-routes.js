@@ -31,56 +31,52 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
+    let isValidC = true;
+    let isValidO = true;
     const dbCustomersData = await Customers.findOne({
       where: {
         email: req.body.email,
       },
     });
-
-    // const dbOwnerData = await StoreOwner.findOne({
-    //   where: {
-    //     email: req.body.email,
-    //   },
-    // });
-
+    const dbOwnerData = await StoreOwner.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
     if (!dbCustomersData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
-      return;
+      isValidC = false;
     }
-
-    // if (!dbOwnerData) {
-    //   res
-    //     .status(400)
-    //     .json({ message: 'Incorrect email or password. Please try again!' });
-    //   return;
-    // }
-
-    const validCustomersPassword = await dbCustomersData.checkPassword(req.body.password);
-    // const validOwnerPassword = await dbOwnerData.checkPassword(req.body.password);
-
-
-    if (!validCustomersPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
-      return;
+    if (!dbOwnerData) {
+      isValidO = false;
     }
-
-    // if (!validOwnerPassword) {
-    //   res
-    //     .status(400)
-    //     .json({ message: 'Incorrect email or password. Please try again!' });
-    //   return;
-    // }
-
+    if(isValidC){
+      const validCustomersPassword = await dbCustomersData.checkPassword(req.body.password);
+      if (!validCustomersPassword) {
+        isValidC = false;
+      }
+    }else if (isValidO){
+      const validOwnerPassword = await dbOwnerData.checkPassword(req.body.password);
+      if (!validOwnerPassword) {
+        isValidO = false; 
+        }
+    }
+    if (!isValidC && !isValidO){
+        res
+          .status(400)
+          .json({ message: 'Incorrect email or password. Please try again!' });
+        return;
+    }
     req.session.save(() => {
       req.session.loggedIn = true;
-
-      res
+      if (isValidC){
+        res
+          .status(200)
+          .json({ user: dbCustomersData, message: 'You are now logged in!' });
+      }else if (isValidO){
+        res
         .status(200)
-        .json({ user: dbCustomersData, message: 'You are now logged in!' });
+        .json({ user: dbOwnerData, message: 'You are now logged in!' });
+      }
     });
   } catch (err) {
     console.log(err);

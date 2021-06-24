@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
 router.get('/orders/:id', async (req, res) => {
     try {
       const customerData = await Customers.findByPk(req.params.id, {
-        attributes: ['id', 'first_name', 'last_name'],
+        attributes: ['id', 'first_name', 'last_name', 'password'],
         include: 
           {
             model: Orders,
