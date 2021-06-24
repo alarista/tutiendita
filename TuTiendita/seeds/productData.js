@@ -6,7 +6,7 @@ const productData = [
         price: 1.49,
         stock: 14,
         category: 'Dairy',
-        filename: 'place holder',
+        filename: 'Chobani.jpg',
         storeOwner_id: 1,
     },
     {
@@ -14,7 +14,7 @@ const productData = [
         price: 1.99,
         stock: 6,
         category: 'Dairy',
-        filename: 'place holder',
+        filename: 'Yoplait.jpg',
         storeOwner_id: 1,
     },
     {
@@ -22,7 +22,7 @@ const productData = [
         price: 4.99,
         stock: 12,
         category: 'Dairy',
-        filename: 'place holder',
+        filename: 'Kerrygold.jpg',
         storeOwner_id: 1,
     },
     {
@@ -30,7 +30,7 @@ const productData = [
         price: 7.99,
         stock: 3,
         category: 'Dairy',
-        filename: 'place holder',
+        filename: 'GrandEuropean.JPG',
         storeOwner_id: 1,
     },
     {
@@ -38,7 +38,7 @@ const productData = [
         price: 29.99,
         stock: 5,
         category: 'Pantry',
-        filename: 'place holder',
+        filename: 'pureVanilla.JPG',
         storeOwner_id: 1,
     },
     {
@@ -46,7 +46,7 @@ const productData = [
         price: 5.99,
         stock: 2,
         category: 'Pantry',
-        filename: 'place holder',
+        filename: 'NamastePizza.jpg',
         storeOwner_id: 1,
     },
     {
@@ -54,7 +54,7 @@ const productData = [
         price: 3.99,
         stock: 25,
         category: 'Pantry',
-        filename: 'place holder',
+        filename: 'NamasteMix.jpg',
         storeOwner_id: 1,
     },
     {
@@ -62,7 +62,7 @@ const productData = [
         price: 3.99,
         stock: 32,
         category: 'Fruits and Vegetables',
-        filename: 'place holder',
+        filename: 'Strawberries.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -70,7 +70,7 @@ const productData = [
         price: 2.49,
         stock: 26,
         category: 'Fruits and Vegetables',
-        filename: 'place holder',
+        filename: 'Clementines.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -78,7 +78,7 @@ const productData = [
         price: 4.49,
         stock: 5,
         category: 'Fruits and Vegetables',
-        filename: 'place holder',
+        filename: 'Blueberries.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -86,7 +86,7 @@ const productData = [
         price: 3.49,
         stock: 7,
         category: 'Fruits and Vegetables',
-        filename: 'place holder',
+        filename: 'RedCherries.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -94,7 +94,7 @@ const productData = [
         price: 5.84,
         stock: 30,
         category: 'Veberages',
-        filename: 'place holder',
+        filename: 'Nescafe.jpg',
         storeOwner_id: 1,
     },
     {
@@ -102,7 +102,7 @@ const productData = [
         price: 2.30,
         stock: 8,
         category: 'Veberages',
-        filename: 'place holder',
+        filename: 'Monster.jpg',
         storeOwner_id: 1,
     },
     {
@@ -110,7 +110,7 @@ const productData = [
         price: 0.60,
         stock: 23,
         category: 'Veberages',
-        filename: 'place holder',
+        filename: 'Powerade.jpg',
         storeOwner_id: 1,
     },
     {
@@ -118,7 +118,7 @@ const productData = [
         price: 1.25,
         stock: 10,
         category: 'Veberages',
-        filename: 'place holder',
+        filename: 'PureProtein.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -126,7 +126,7 @@ const productData = [
         price: 10.99,
         stock: 4,
         category: 'Bread',
-        filename: 'place holder',
+        filename: 'SaraLee.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -134,7 +134,7 @@ const productData = [
         price: 1.99,
         stock: 12,
         category: 'Bread',
-        filename: 'place holder',
+        filename: 'Katz.jpg',
         storeOwner_id: 1,
     },
     {
@@ -142,7 +142,7 @@ const productData = [
         price: 11.46 ,
         stock: 5,
         category: 'Bread',
-        filename: 'place holder',
+        filename: 'MrsFreshleys.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -150,7 +150,7 @@ const productData = [
         price: 16.99,
         stock: 3,
         category: 'Bread',
-        filename: 'place holder',
+        filename: 'Oroweat.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -158,7 +158,7 @@ const productData = [
         price: 4.38,
         stock: 23,
         category: 'Delicatessen',
-        filename: 'place holder',
+        filename: 'OscarMayer.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -166,7 +166,7 @@ const productData = [
         price: 5.48,
         stock: 12,
         category: 'Delicatessen',
-        filename: 'place holder',
+        filename: 'Hillshire.JPG',
         storeOwner_id: 1,
     },
     {
@@ -174,7 +174,7 @@ const productData = [
         price: 4.27,
         stock: 7,
         category: 'Delicatessen',
-        filename: 'place holder',
+        filename: 'GalloSalame.JPG',
         storeOwner_id: 1,
     },
     {
@@ -182,7 +182,7 @@ const productData = [
         price: 3.26,
         stock: 2,
         category: 'Delicatessen',
-        filename: 'place holder',
+        filename: 'BarS.jpeg',
         storeOwner_id: 1,
     },
     {
@@ -190,7 +190,7 @@ const productData = [
         price: 1.29,
         stock: 30,
         category: 'Snacks and Candy',
-        filename: 'place holder',
+        filename: 'mandms.jpg',
         storeOwner_id: 1,
     },
     {
@@ -198,7 +198,7 @@ const productData = [
         price: 0.34,
         stock: 30,
         category: 'Snacks and Candy',
-        filename: 'place holder',
+        filename: 'nerds.jpg',
         storeOwner_id: 1,
     },
     {
@@ -206,7 +206,7 @@ const productData = [
         price: 2.18,
         stock: 23,
         category: 'Snacks and Candy',
-        filename: 'place holder',
+        filename: 'Skittles.jpg',
         storeOwner_id: 1,
     },
 ]
