@@ -1,6 +1,5 @@
 const router = require('express').Router();
-
-const { Example, Product } = require('../models');
+const { Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -23,6 +22,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 
 router.get('/products', async(req,res)=>{
     try {
@@ -38,4 +38,6 @@ router.get('/products', async(req,res)=>{
   })
 
 
+=======
+>>>>>>> 03cfcdd977caaa448a06457ae58f580db42e222d
 module.exports = router;
