@@ -48,6 +48,8 @@ function addProducts(){
     addProduct.classList.add("active");
 }
 
+var registerNewProduct = document.getElementById("done_button")
+
 const ProductFormHandler = async (event) => {
     event.preventDefault();
 
@@ -56,6 +58,7 @@ const ProductFormHandler = async (event) => {
     const productStock = document.querySelector('#new_product_stock').value.trim();
     const productCategory = document.querySelector('#inputState').value.trim();
     const productImg = document.querySelector('#new_product_img').value.trim();
+    console.log(productTitle);
 
   
     if (productTitle && productPrice && productStock && productCategory && productImg) {
@@ -73,4 +76,4 @@ const ProductFormHandler = async (event) => {
     }
   };
   
-
+  registerNewProduct.addEventListener("click", ProductFormHandler);
