@@ -48,7 +48,23 @@ function addProducts(){
     addProduct.classList.add("active");
 }
 
+const ProductFormHandler = async (event) => {
+    event.preventDefault();
 
+    const productTitle = document.querySelector('#new_product_name').value.trim();
+    const productPrice = document.querySelector('#new_product_price').value.trim();
+    const productStock = document.querySelector('#new_product_stock').value.trim();
+    const productCategory = document.querySelector('#inputState').value.trim();
+    const productImg = document.querySelector('#new_product_img').value.trim();
 
-
+  
+    if (productTitle && productPrice && productStock && productCategory && productImg) {
+      const response = await fetch('/api/stores/1', {
+        method: 'POST',
+        body: JSON.stringify({ productTitle, productPrice, productStock, productCategory, productImg }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+  };
+  
 
