@@ -6,7 +6,6 @@
 .main-title{
   font-weight: bold;
   font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 65px;
 }
 
 .card-title{
@@ -28,4 +27,33 @@ h2{
 
 footer{
   margin-top: 65px;
+}
+
+.card-img-top{
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 100px;
+}
+
+#store_orders {
+  display: none;
+}
+
+#product_form {
+  display: none;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+}
+#done_button {
+  width: 150px;
+  height: 50px;
+  display: inline;
+  padding: 15px
+
 }
