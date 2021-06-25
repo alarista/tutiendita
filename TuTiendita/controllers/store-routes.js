@@ -5,14 +5,14 @@ const withAuth = require('../utils/auth');
 
 router.get('/:id', async (req, res) => {
     try {
-      const productData = await Product.findAll({
+      const products = await Product.findAll({
         attributes: ['product_name', 'price', 'category', 'stock', 'filename'],
         where: {
           storeOwner_id: req.params.id,
         },
+        raw: true
       });
-      res.render('store', { productData, loggedIn: req.session.loggedIn });
-      // res.status(200).json(productData);
+      res.render('store', { products, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
