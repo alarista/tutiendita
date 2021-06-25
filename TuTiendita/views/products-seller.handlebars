@@ -33,7 +33,7 @@
       
       <div class="col-3">
         <h3>See your orders</h3>
-        {{#each ordersData as |order|}}
+          {{#each ordersData as |order|}}
           <div class="card">
             <div class="card-header">Order number #{{order.id}}</div>
             <div class="card-body">
@@ -45,11 +45,9 @@
                 <li>Total price: ${{order.total}}</li>
               </ul>
             </div>
-        {{/each}}
           </div>
-
+          {{/each}}
       </div>
-
     </div>
     </div>
     

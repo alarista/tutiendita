@@ -13,7 +13,7 @@ router.get('/:id', async (req, res) => {
       });
       const storeOwner = storeOwnerData.get({ plain: true });
 
-      const query = "SELECT o.id, o.status, s.store_name, c.address1, p.product_name, p.price, od.quantity, od.total, c.address2, c.city, c.state, c.postal_code, c.phone " +
+      const query = "SELECT o.id, o.status, s.store_name, c.address1, SUM(od.total) total, SUM(od.quantity) quantity "+
       "FROM storeOwner s "+
       "INNER JOIN orders o "+
       "ON s.id = o.store_owner_id "+
@@ -23,8 +23,12 @@ router.get('/:id', async (req, res) => {
       "ON o.id = od.order_id "+
       "INNER JOIN product p "+
       "ON od.product_id = p.id "+
-      "ORDER BY od.order_id ASC"
-      const [ordersData, metadata] = await sequelize.query(query);
+      "WHERE s.id = ? "+
+      "GROUP BY o.id, o.status, s.store_name, c.address1 "+
+      "ORDER BY od.order_id ASC "
+      const [ordersData, metadata] = await sequelize.query(query, {
+        replacements: [req.params.id],
+      });
 
       res.render('products-seller', { storeOwner, ordersData, loggedIn: req.session.loggedIn });
       // res.send(storeOwner).json()
