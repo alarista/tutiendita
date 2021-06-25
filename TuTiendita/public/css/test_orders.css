@@ -1,0 +1,31 @@
+.upper_part {
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+
+.main-title{
+  font-weight: bold;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 65px;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+h2{
+  padding-bottom: 25px;
+}
+
+.card-header{
+  font-weight: bold;
+  padding: 15px;
+}
+
+.add-product{
+  margin-top: 15px;
+}
+
+footer{
+  margin-top: 65px;
+}

@@ -1,5 +1,54 @@
-<h1></h1>
-{{#each products as |product|}}
-  <p>{{product.name}}</p>
-  <p>{{product.price}}</p>
-{{/each}}
+
+      <h1 class="main-title text-center">WELCOME TO YOUR STORE!</h1>
+      <hr size="3" width="50%" color="gray" />
+    
+    <div class="container main_part">
+
+      <div class="row">
+
+      <div class="col-9">
+        <h3>Modify your products</h3>
+        {{#each storeOwner.products as |product|}}
+          <div class="card">
+            <div class="row card-body">
+              <div class="col-6">
+                <h5 class="card-title">{{product.product_name}}</h5>
+                <ul class="card-text">
+                  <li>Stock: {{product.stock}}</li>
+                  <li>Price: ${{product.price}}</li>
+                  <li>Category: {{product.category}}</li>
+                </ul>
+                <a href="#" class="btn btn-success">Modify it</a>
+                <a href="#" class="btn btn-danger">Erase it</a>
+              </div>
+              <img
+                class="col-6"
+                src="https://assets.tmecosys.com/image/upload/t_web600x528/img/recipe/ras/Assets/76CA0351-4470-4532-882B-0D0EAF6FCFEA/Derivates/f991d9c3-0180-4e7e-853f-36dd7ba8c7b4.jpg"
+                alt="sans"
+              />
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      
+      <div class="col-3">
+        <h3>See your orders</h3>
+          {{#each ordersData as |order|}}
+          <div class="card">
+            <div class="card-header">Order number #{{order.id}}</div>
+            <div class="card-body">
+              <ul class="card-text">
+                <li>Status: {{order.status}}</li>
+                <li>Store name: {{order.store_name}}</li>
+                <li>Address for delivery: {{order.address1}}</li>
+                <li>Products bought: {{order.quantity}}</li>
+                <li>Total price: ${{order.total}}</li>
+              </ul>
+            </div>
+          </div>
+          {{/each}}
+      </div>
+    </div>
+    </div>
+    
+ 

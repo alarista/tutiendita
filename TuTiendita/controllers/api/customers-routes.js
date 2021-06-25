@@ -50,41 +50,4 @@ router.get('/orders/:id', async (req, res) => {
     }
 });
 
-
-// router.get('/hashcustomerspasswords', async (req, res) => {
-//     try {
-//       const customerData = await Customers.findAll();
-//       const customerPassword = [];
-//       customerData.forEach( ({id, password}) => {
-//         customerPassword.push({id: id, password: password})
-//       })
-//       console.log(customerPassword);
-//       customerPassword[0].password = await bcrypt.hash(customerPassword.password, 10);
-//     //   for (let i=0; i<customerPassword.length; i++){
-//     //     console.log("asd");
-//     //     customerPassword[i].password = await bcrypt.hash(customerPassword.password, 10);
-//     //     console.log(customerPassword);
-//     //   }
-//       console.log(customerPassword);
-//       res.status(200).json(customerPassword);
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-// });
-  
-
 module.exports = router;
-
-/*
-function upsert(values, condition) {
-    return Model
-        .findOne({ where: condition })
-        .then(function(obj) {
-            // update
-            if(obj)
-                return obj.update(values);
-            // insert
-            return Model.create(values);
-        })
-}
-*/

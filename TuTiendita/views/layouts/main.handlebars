@@ -1,17 +1,116 @@
-<html lang='en'>
+<!doctype html>
+<html lang="en">
 
-  <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>TITLE</title>
-    <link rel='stylesheet' href='/css/jass.css' />
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.83.1">
+  <title>TuTiendita </title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="./css/style.css" rel="stylesheet">
+  <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-  <body>
-    <!-- Aca va el código de Sand para la estructura principal de la página -->
-    {{{body}}}
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-  </body>
+  <!-- Custom styles for sidebars -->
+  <link href="./css/sidebars.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="table" viewBox="0 0 16 16">
+      <path
+        d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z" />
+    </symbol>
+    <symbol id="grid" viewBox="0 0 16 16">
+      <path
+        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+    </symbol>
+  </svg>
+
+
+  <nav>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout <i class="fas fa-sign-out-alt"></i> </button>
+    {{else}}
+    <a href="/login">Login <i class="fas fa-sign-in-alt"></i> </a>
+    {{/if}}
+  </nav>
+
+  <main>
+
+    <div class="d-flex flex-column bg-light" style="width: 4.5rem;">
+
+      <a class=" d-block p-3 link-dark text-decoration-none" title="User" id="User" data-bs-toggle="tooltip"
+        data-bs-placement="right">
+        <i class="fas fa-users fa-2x" width="40" height="32"></i>
+        <span class="visually-hidden">Users icon only</span>
+      </a>
+
+      <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+
+        <li class="nav-item" id="Homepage">
+          <a href="/">
+            <button type="button" id="HomepageButton" class="nav-link active py-3 border-bottom" title="Homepage">
+              <i class="fas fa-store fa-2x" width="40" height="32"></i>
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="/login">
+            <button type="button" id="Login-signup" class="nav-link py-3 border-bottom" title="Login / Sign-up">
+              <i class="fas fa-sign-in-alt fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="/products">
+            <button type="button" id="Stores" class="nav-link py-3 border-bottom" title="Stores Available">
+              <i class="fas fa-shopping-cart fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="/yourStore">
+            <button type="button" id="YourStore" class="nav-link py-3 border-bottom" title="Your Store">
+              <i class="fas fa-cart-plus fa-2x" width="34" height="26"></i>
+            </button>
+          </a>
+        </li>
+
+        <li>
+          <a href="/orders">
+            <button type="button" id="Orders" class="nav-link py-3 border-bottom" title="Orders">
+              <i class="fas fa-clipboard-list fa-3x" width="34" height="26"></i>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="homepagestores">
+      {{{body}}}
+    </div>
+
+</body>
 
 </html>

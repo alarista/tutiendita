@@ -56,6 +56,7 @@ router.get('/:id', async (req, res) => {
                     "INNER JOIN product p "+
                     "ON od.product_id = p.id "+
                     "WHERE o.id = ?"+
+                    "WHERE s.id = ?"+
                     "ORDER BY od.order_id ASC"
       const [productData, metadata] = await sequelize.query(query, {
         replacements: [req.params.id],
