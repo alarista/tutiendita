@@ -1,7 +1,6 @@
-const sequelize = require('../config/connection');
+const sequelize = require('../../config/connection');
 const router = require('express').Router();
 // const { Product } = require('../models');
-const withAuth = require('../utils/auth');
 
 // Status, Store name, Address for delivery, Products bought, Total Cost
 /*

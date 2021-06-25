@@ -4,8 +4,8 @@ const homeRoutes = require('./homeRoutes');
 const yourStoreRoutes = require('./yourStoreRoutes');
 const storeRoutes = require('./store-routes');
 
-router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 router.use('/your_store', yourStoreRoutes);
 router.use('/store', storeRoutes);
 
