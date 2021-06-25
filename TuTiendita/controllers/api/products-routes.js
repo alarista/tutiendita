@@ -21,6 +21,23 @@ router.get('/productowner', async (req, res) => {
     }
   });
 
+  router.get('/test/:id', async (req, res) => {
+    try {
+      const products = await Product.findAll({
+        attributes: ['product_name', 'price', 'category', 'stock', 'filename'],
+        where: {
+          storeOwner_id: req.params.id,
+        },
+      });
+      // const products = productData.get({ plain: true });
+      // res.render('store', { products, loggedIn: req.session.loggedIn });
+      res.status(200).json(products);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
+
 // create new product
 router.post("/", (req, res) => {
   /* req.body should look like this...

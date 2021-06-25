@@ -44,19 +44,19 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       // const [productData, metadata] = await sequelize.query('SELECT * FROM storeOwner');
-      const query = "SELECT o.id, o.status, s.store_name, c.address1, p.product_name, p.price, od.quantity, od.total, c.address2, c.city, c.state, c.postal_code, c.phone " +
-                    "FROM storeOwner s "+
-                    "INNER JOIN orders o "+
-                    "ON s.id = o.store_owner_id "+
-                    "INNER JOIN customers c "+
-                    "ON o.customer_id = c.id "+
-                    "INNER JOIN order_details od "+
-                    "ON o.id = od.order_id "+
-                    "INNER JOIN product p "+
-                    "ON od.product_id = p.id "+
-                    "WHERE o.id = ?"+
-                    "WHERE s.id = ?"+
-                    "ORDER BY od.order_id ASC"
+      const query = "SELECT o.id, o.status, s.store_name, c.address1, SUM(od.total) total, SUM(od.quantity) quantity "+
+      "FROM storeOwner s "+
+      "INNER JOIN orders o "+
+      "ON s.id = o.store_owner_id "+
+      "INNER JOIN customers c "+
+      "ON o.customer_id = c.id "+
+      "INNER JOIN order_details od "+
+      "ON o.id = od.order_id "+
+      "INNER JOIN product p "+
+      "ON od.product_id = p.id "+
+      "WHERE s.id = ? "+
+      "GROUP BY o.id, o.status, s.store_name, c.address1 "+
+      "ORDER BY od.order_id ASC "
       const [productData, metadata] = await sequelize.query(query, {
         replacements: [req.params.id],
       });
