@@ -11,8 +11,8 @@ router.get('/:id', async (req, res) => {
         },           
       });
       const storeOwner = storeOwnerData.get({ plain: true });
-      res.status(200).json(storeOwner);
-    //   res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+      res.render('products-seller', { storeOwner, loggedIn: req.session.loggedIn });
+      // res.send(storeOwner).json()
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
