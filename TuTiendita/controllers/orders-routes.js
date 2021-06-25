@@ -7,15 +7,12 @@ const withAuth = require('../utils/auth');
 /*
 storeOwner:
   store_name
-
 Customers:
   address
-
 Orders:
   customer_id
   storeOwner_id
   status
-
 Order details
   product_id
   order_id
@@ -58,6 +55,7 @@ router.get('/:id', async (req, res) => {
                     "ON o.id = od.order_id "+
                     "INNER JOIN product p "+
                     "ON od.product_id = p.id "+
+                    "WHERE o.id = ?"+
                     "WHERE s.id = ?"+
                     "ORDER BY od.order_id ASC"
       const [productData, metadata] = await sequelize.query(query, {
