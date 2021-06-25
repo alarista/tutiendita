@@ -1,78 +1,80 @@
-<h1 class="main-title text-center">WELCOME TO YOUR STORE!</h1>
-<hr size="3" width="50%" color="gray" />
+<div class="container" id="container4" style="width: 90%; margin: 10px;">
 
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a id="see_products" class="nav-link active" href="#">Manage your products</a>
-  </li>
-  <li class="nav-item">
-    <a id="add_product" class="nav-link" href="#">Add a new product</a>
-  </li>
-  <li class="nav-item">
-    <a id="see_orders" class="nav-link" href="#">See your orders</a>
-  </li>
-</ul>
+  <h1 class="main-title text-center">WELCOME TO YOUR STORE!</h1>
+  <hr size="3" width="50%" color="gray" />
 
-<div class="row-cols-4 no-gutters" id="store_products">
-  <br>
-  <h2 style="text-align: center">Manage your products</h2>
-  <div class="card-columns">
-    {{#each storeOwner.products as |product|}}
-    <div class="card">
-      <img src="/images/{{product.filename}}" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">{{product.product_name}}</h5>
-        <ul class="card-text">
-          <li>Stock: {{product.stock}}</li>
-          <li>Price: ${{product.price}}</li>
-          <li>Category: {{product.category}}</li>
-        </ul>
-        <a href="#" class="btn btn-danger">Erase it</a>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a id="see_products" class="nav-link active" href="#">Manage your products</a>
+    </li>
+    <li class="nav-item">
+      <a id="add_product" class="nav-link" href="#">Add a new product</a>
+    </li>
+    <li class="nav-item">
+      <a id="see_orders" class="nav-link" href="#">See your orders</a>
+    </li>
+  </ul>
 
+  <div class="row-cols-4 no-gutters" id="store_products">
+    <br>
+    <h2 style="text-align: center">Manage your products</h2>
+    <div class="card-columns">
+      {{#each storeOwner.products as |product|}}
+      <div class="card">
+        <img src="/images/{{product.filename}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{product.product_name}}</h5>
+          <ul class="card-text">
+            <li>Stock: {{product.stock}}</li>
+            <li>Price: ${{product.price}}</li>
+            <li>Category: {{product.category}}</li>
+          </ul>
+          <a href="#" class="btn btn-danger">Erase it</a>
+
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="row-cols-4 no-gutters" id="store_orders">
+    <br>
+    <h2 style="text-align: center">See your orders</h2>
+    <div class="card-columns">
+      {{#each ordersData as |order|}}
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Order number #{{order.id}}</h5>
+          <ul class="card-text">
+            <li>Status: {{order.status}}</li>
+            <li>Store name: {{order.store_name}}</li>
+            <li>Address for delivery: {{order.address1}}</li>
+            <li>Products bought: {{order.quantity}}</li>
+            <li>Total price: ${{order.total}}</li>
+          </ul>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <form id="product_form">
+    <br>
+    <h2 style="text-align: center">Add a product</h2>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="productname">Product Name</label>
+        <input type="text" class="form-control" id="new_product_name" placeholder="Product name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="productprice">Price</label>
+        <input type="number" class="form-control" id="new_product_price" placeholder="Price">
       </div>
     </div>
-  {{/each}}
-  </div>
- </div>
-
-<div class="row-cols-4 no-gutters" id="store_orders">
-  <br>
-  <h2 style="text-align: center">See your orders</h2>
-  <div class="card-columns">
-    {{#each ordersData as |order|}}
-    <div class="card bg-light mb-3">
-      <div class="card-body">
-        <h5 class="card-title">Order number #{{order.id}}</h5>
-              <ul class="card-text">
-                <li>Status: {{order.status}}</li>
-                <li>Store name: {{order.store_name}}</li>
-                <li>Address for delivery: {{order.address1}}</li>
-                <li>Products bought: {{order.quantity}}</li>
-                <li>Total price: ${{order.total}}</li>
-              </ul>
-      </div>
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <input type="number" class="form-control" id="new_product_stock" placeholder="Units of stock">
     </div>
-  {{/each}}
-  </div>
- </div>
-
-<form id="product_form">
-  <br>
-  <h2 style="text-align: center">Add a product</h2>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="productname">Product Name</label>
-      <input type="text" class="form-control" id="new_product_name" placeholder="Product name">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="productprice">Price</label>
-      <input type="number" class="form-control" id="new_product_price" placeholder="Price">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="stock">Stock</label>
-    <input type="number" class="form-control" id="new_product_stock" placeholder="Units of stock">
-  </div>
     <div class="form-group col-md-4">
       <label for="inputState">Category</label>
       <select id="inputState" class="form-control">
@@ -83,19 +85,28 @@
         <option>Beverages and Water</option>
         <option>Bakery and Tortillas</option>
         <option>Delicatessen</option>
-        <option>Snacks and Candy</option>  
+        <option>Snacks and Candy</option>
       </select>
-    </div>  
-
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="productimage">Image URL</label>
-      <input type="link" class="form-control" id="new_product_img">
     </div>
-  <button type="submit" class="btn btn-primary" id="done_button">Done</button>
-</form>
-<br>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="productimage">Image URL</label>
+        <input type="link" class="form-control" id="new_product_img">
+      </div>
+      <button type="submit" class="btn btn-primary" id="done_button">Done</button>
+  </form>
+  <br>
+
+  <link href="stylesheet" href="./css/test_orders.css">
+
+</div>
+
+<link href="/css/style.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/sidebars.css" rel="stylesheet">
+
 
 <script src="/js/storeownerview.js"></script>
-<link rel="stylesheet" href="/css/test_orders.css">
-
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/sidebars.js"></script>
