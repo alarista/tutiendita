@@ -33,15 +33,15 @@
       
       <div class="col-3">
         <h3>See your orders</h3>
-        {{#each orders as |order|}}
+        {{#each ordersData as |order|}}
           <div class="card">
-            <div class="card-header">Order number #{{order.order_id}}</div>
+            <div class="card-header">Order number #{{order.id}}</div>
             <div class="card-body">
               <ul class="card-text">
-                <li>Status: </li>
-                <li>Store name: b</li>
-                <li>Address for delivery: c</li>
-                <li>Products bought: d</li>
+                <li>Status: {{order.status}}</li>
+                <li>Store name: {{order.store_name}}</li>
+                <li>Address for delivery: {{order.address1}}</li>
+                <li>Products bought: {{order.quantity}}</li>
                 <li>Total price: ${{order.total}}</li>
               </ul>
             </div>
