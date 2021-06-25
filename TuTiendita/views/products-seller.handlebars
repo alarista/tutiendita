@@ -1,40 +1,40 @@
 
-      <h1 class="main-title text-center">WELCOME TO YOUR STORE!</h1>
-      <hr size="3" width="50%" color="gray" />
-    
-    <div class="container main_part">
+ <h1 class="main-title text-center">WELCOME TO YOUR STORE!</h1>
+<hr size="3" width="50%" color="gray" />
 
-      <div class="row">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a id="see_products" class="nav-link active" href="#">Manage your products</a>
+  </li>
+  <li class="nav-item">
+    <a id="add_product" class="nav-link" href="#">Add a new product</a>
+  </li>
+  <li class="nav-item">
+    <a id="see_orders" class="nav-link" href="#">See your orders</a>
+  </li>
+</ul>
 
-      <div class="col-9">
-        <h3>Modify your products</h3>
-        {{#each storeOwner.products as |product|}}
-          <div class="card">
-            <div class="row card-body">
-              <div class="col-6">
-                <h5 class="card-title">{{product.product_name}}</h5>
-                <ul class="card-text">
-                  <li>Stock: {{product.stock}}</li>
-                  <li>Price: ${{product.price}}</li>
-                  <li>Category: {{product.category}}</li>
-                </ul>
-                <a href="#" class="btn btn-success">Modify it</a>
-                <a href="#" class="btn btn-danger">Erase it</a>
-              </div>
-              <img
-                class="col-6"
-                src="/images/{{product.filename}}"
-                alt="sans"
-              />
-            </div>
-          </div>
-        {{/each}}
+<div class="row-cols-4 no-gutters" id="store_products">
+  <br>
+  <h2 style="text-align: center">Manage your products</h2>
+  <div class="card-columns">
+    {{#each storeOwner.products as |product|}}
+    <div class="card">
+      <img src="/images/{{product.filename}}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{product.product_name}}</h5>
+        <ul class="card-text">
+          <li>Stock: {{product.stock}}</li>
+          <li>Price: ${{product.price}}</li>
+          <li>Category: {{product.category}}</li>
+        </ul>
+        <a href="#" class="btn btn-danger">Erase it</a>
+
       </div>
     </div>
   {{/each}}
   </div>
  </div>
-
 
 <div class="row-cols-4 no-gutters" id="store_orders">
   <br>
