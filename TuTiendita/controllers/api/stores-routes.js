@@ -11,8 +11,7 @@ router.get('/:id', async (req, res) => {
           storeOwner_id: req.params.id,
         },
       });
-      res.render('store', { productData, loggedIn: req.session.loggedIn });
-      // res.status(200).json(productData);
+      res.status(200).json(productData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
