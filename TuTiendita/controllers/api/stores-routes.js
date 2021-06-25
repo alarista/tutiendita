@@ -18,6 +18,23 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.post('/:id', async (req, res) => {
+  try {
+    const dbProductData = await Product.create({
+      product_name: req.body.productTitle,
+      price: req.body.productPrice,
+      stock: req.body.productStock,
+      category: req.body.productCategory,
+      filename: req.body.productImg,
+      storeOwner_id: 1,
+    });
+    console.log(req.body);
+    res.status(200).json(dbProductData);
 
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

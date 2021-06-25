@@ -64,6 +64,12 @@ const ProductFormHandler = async (event) => {
         body: JSON.stringify({ productTitle, productPrice, productStock, productCategory, productImg }),
         headers: { 'Content-Type': 'application/json' },
       });
+
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to add product.');
+      }
     }
   };
   
