@@ -1,3 +1,10 @@
+const products = async () => {
+    const response = await fetch('/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+};
+
 var num = 1,
     price = 7;
 

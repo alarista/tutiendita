@@ -13,7 +13,7 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="./css/style.css" rel="stylesheet">
 
-  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS type="text/css" -->
   <link href="./css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for sidebars -->
@@ -73,7 +73,7 @@
         </li>
 
         <li>
-          <a href="/products">
+          <a href="/store/1">
             <button type="button" id="Stores" class="nav-link py-3 border-bottom" title="Stores Available">
               <i class="fas fa-shopping-cart fa-2x" width="34" height="26"></i>
             </button>
@@ -101,9 +101,16 @@
 
     <div class="b-example-divider"></div>
 
-    <div class="homepagestores">
+    {{!-- <div class="homepagestores"> --}}
       {{{body}}}
-    </div>
+    {{!-- </div> --}}
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/sidebars.js"></script>
 
 </body>
 
