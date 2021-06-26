@@ -11,6 +11,8 @@ _An application that enables small store owners to create a simple online store 
 
 ## Instructions 🚀
 To run directly on your computer after downloading the repository
+\
+&nbsp;
 `1. Run npm i`
 \
 &nbsp;
