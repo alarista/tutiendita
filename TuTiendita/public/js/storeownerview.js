@@ -1,14 +1,29 @@
 var cardEl = document.querySelector('#container4');
 
-function removeProduct(event) {
+async function removeProduct(event) {
+  event.preventDefault();
   var buttonClicked = event.target;
   var textEl = event.target.textContent;
-  console.log(textEl);
+  // console.log(textEl);
   if(textEl === 'Erase it'){
-    // console.log('Clicked a card');
     var productName = event.target.parentElement.firstElementChild.textContent.trim();
-    // console.log("Product name:", productName);
     buttonClicked.parentElement.parentElement.remove();
+    console.log("Product name:", productName);
+    // console.log('Clicked a card');
+    if (productName) {
+      productName = productName.replace("%", "_");
+      const response = await fetch("/api/products/" + productName, {
+        method: "DELETE",
+        body: JSON.stringify(),
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) {
+        // document.location.replace("/");
+        alert("Failed to delete product.");
+       } //else {
+      //   alert("Failed to add product.");
+      // }
+    }
   } 
 }
 
@@ -95,9 +110,6 @@ const ProductFormHandler = async (event) => {
 const ProductFormDeleter = async (event) => {
   event.preventDefault();
 
-  const findURL = removeProduct();
-  // console.log(findURL);
-
   if (findURL) {
     const response = await fetch("/api/products/" + findURL, {
       method: "DELETE",
@@ -113,6 +125,6 @@ const ProductFormDeleter = async (event) => {
   }
 };
 
-deleteProductButtons.addEventListener("click", ProductFormDeleter);
 
+cardEl.addEventListener("click", removeProduct);
 registerNewProduct.addEventListener("click", ProductFormHandler);

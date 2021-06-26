@@ -68,16 +68,18 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete('/:filename', (req, res) => {
+router.delete('/:product_name', (req, res) => {
   // delete one product by its `id` value
+  var productName = req.params.product_name.replace("_", "%");
+  console.log(productName)
   Product.destroy({
     where: {
-      filename: req.params.filename
+      product_name: productName
     }
   })
   .then(productData => {
     if (!productData) {
-      rs.status(404).json({message: 'No product found with this id'});
+      res.status(404).json({message: 'No product found with this id'});
       return;
     }
     res.json(productData);
@@ -87,5 +89,35 @@ router.delete('/:filename', (req, res) => {
     res.status(500).json(err);
   });
 });
+
+
+
+
+
+// router.delete('/:filename',async (req, res) => {
+//   // delete one product by its `id` value
+//   try{
+//   console.log(req.params.filename)
+  
+//   }catch(err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   };
+// });
+
+
+
+
+
+/*
+
+
+
+
+*/
+
+
+
+
 
   module.exports = router;

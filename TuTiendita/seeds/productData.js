@@ -42,7 +42,7 @@ const productData = [
         storeOwner_id: 1,
     },
     {
-        product_name: 'Namaste Foods Gluten Free Pizza Crust Mix 16 oz ' ,
+        product_name: 'Namaste Foods Gluten Free Pizza Crust Mix 16 oz' ,
         price: 5.99,
         stock: 2,
         category: 'Pantry',
@@ -98,7 +98,7 @@ const productData = [
         storeOwner_id: 1,
     },
     {
-        product_name: 'Monster Green Energy, 16oz ' ,
+        product_name: 'Monster Green Energy, 16oz' ,
         price: 2.30,
         stock: 8,
         category: 'Veberages',
