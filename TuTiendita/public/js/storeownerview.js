@@ -89,6 +89,7 @@ const ProductFormHandler = async (event) => {
     } else {
       alert("Failed to add product.");
     }
+
   }
 };
 
@@ -116,3 +117,9 @@ const ProductFormDeleter = async (event) => {
 deleteProductButtons.addEventListener("click", ProductFormDeleter);
 
 registerNewProduct.addEventListener("click", ProductFormHandler);
+
+  };
+  
+  cardEl.addEventListener('click', removeProduct);
+  registerNewProduct.addEventListener("click", ProductFormHandler);
+
