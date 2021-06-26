@@ -16,6 +16,7 @@ html {
 nav {
     display: flex;
     background-color: var(--secondary);
+    padding: 14px 20px;
   }
   
   nav a {
