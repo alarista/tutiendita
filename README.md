@@ -43,7 +43,7 @@ _No installation neccesary for this project._
 \
 &nbsp;
 ## Authors ✒️
-*THE ARTISTS TEAM:*
+*Don Poncho Abarrotes Team:*
 * **`Sandra Pérez`**   - [sandraileana](https://github.com/sandraileana)
 * **`Alfonso Núñez`** - [00anp](https://github.com/00anp)
 * **`Erick Contreras`**  - [Erickcc](https://github.com/Erickcc)
