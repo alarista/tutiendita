@@ -1,3 +1,25 @@
+var storeEl = document.querySelector('#container3');
+
+
+async function addToCart(event){
+    event.preventDefault();
+    var textEl = event.target.textContent;
+    // Remove all extra spaces from string src=https://futurestud.io/tutorials/remove-extra-spaces-from-a-string-in-javascript-or-node-js
+    let formattedText = textEl.replace(/\s+/g, ' ').trim();
+    // console.log("Clicking");
+    // console.log(formattedText);
+    if(formattedText === 'Add to cart'){
+        let title = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.shop-item-title').textContent.trim();
+        let price = event.target.previousElementSibling.textContent;
+        let image = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.card-img-top').getAttribute("src");//.slice(8);
+        // console.log('Adding to the cart');
+        // console.log('Title: ', title);
+        // console.log('Price: ', price);
+        // console.log('Image: ', image);
+        addItemToCart(title, price, image);
+    }
+}
+
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready);
 } else{
@@ -17,11 +39,11 @@ function ready() {
         input.addEventListener('change', quantityChanged)
     }
 
-    var addToCartButtons = document.getElementsByClassName('ip-add-cart')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
-    }
+    // var addToCartButtons = document.getElementsByClassName('ip-add-cart')
+    // for (var i = 0; i < addToCartButtons.length; i++) {
+    //     var button = addToCartButtons[i]
+    //     button.addEventListener('click', addToCartClicked)
+    // }
 
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
@@ -51,15 +73,15 @@ function quantityChanged(event){
     updateCartTotal()
 }
 
-function addToCartClicked(event){
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    addItemToCart(title, price, imageSrc)
-    updateCartTotal();
-}
+// function addToCartClicked(event){
+//     var button = event.target
+//     var shopItem = button.parentElement.parentElement
+//     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+//     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+//     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+//     addItemToCart(title, price, imageSrc)
+//     updateCartTotal();
+// }
 
 function addItemToCart(title, price, imageSrc) {
     var cartRow = document.createElement('div')
@@ -103,3 +125,5 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
+
+storeEl.addEventListener("click", addToCart);
