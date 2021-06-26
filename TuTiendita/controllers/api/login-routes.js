@@ -37,11 +37,13 @@ router.post('/login', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      // raw: true,
     });
     const dbOwnerData = await StoreOwner.findOne({
       where: {
         email: req.body.email,
       },
+      // raw: true,
     });
     if (!dbCustomersData) {
       isValidC = false;
@@ -69,10 +71,12 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       if (isValidC){
         req.session.user = 'customer';
-        req.session.id = dbCustomersData.id;
+        req.session.userid = dbCustomersData.id;
+        console.log("**************"+req.session.userid);
+
       }else if (isValidO){
         req.session.user = 'vendor';
-        req.session.id = dbOwnerData.id;
+        req.session.userid = dbOwnerData.id;
       }
       
       req.session.loggedIn = true;

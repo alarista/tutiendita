@@ -3,7 +3,7 @@ const { Product } = require('../models');
 const withAuth = require('../utils/auth');
 const isCustomer = require('../utils/validateCustomer');
 
-router.get('/:id', withAuth, isCustomer,async (req, res) => {
+router.get('/', withAuth, isCustomer,async (req, res) => {
     try {
       const dairy = await Product.findAll({
         attributes: ['product_name', 'price', 'stock', 'filename'],
@@ -66,7 +66,5 @@ router.get('/:id', withAuth, isCustomer,async (req, res) => {
       res.status(500).json(err);
     }
 });
-
-
 
 module.exports = router;

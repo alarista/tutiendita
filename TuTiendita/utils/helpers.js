@@ -1,8 +1,12 @@
 // Custom handlebars helper functions
 module.exports = {
-//   total_price: () => {
-
-//   },
+  get_tag_color: (orderStatus) => {
+    if(orderStatus == 'Completed'){
+        return "bg-success";
+    }else {
+        return "bg-info";
+    }
+  },
 
 //   total_products: () => {
 
