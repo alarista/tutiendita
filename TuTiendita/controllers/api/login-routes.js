@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
       const validOwnerPassword = await dbOwnerData.checkPassword(req.body.password);
       if (!validOwnerPassword) {
         isValidO = false; 
-        }
+      }
     }
     if (!isValidC && !isValidO){
         res
@@ -67,6 +67,14 @@ router.post('/login', async (req, res) => {
         return;
     }
     req.session.save(() => {
+      if (isValidC){
+        req.session.user = 'customer';
+        req.session.id = dbCustomersData.id;
+      }else if (isValidO){
+        req.session.user = 'vendor';
+        req.session.id = dbOwnerData.id;
+      }
+      
       req.session.loggedIn = true;
       if (isValidC){
         res
