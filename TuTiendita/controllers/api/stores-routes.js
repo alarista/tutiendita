@@ -30,11 +30,33 @@ router.post('/:id', async (req, res) => {
     });
     console.log(req.body);
     res.status(200).json(dbProductData);
-
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+router.delete('/:fileName', async (req, res) => {
+  try {
+  const product = await Product.findOne({
+    where: {
+      filename: req.params.fileName
+    }
+  });
+    await product.destroy();
+    res.status(200);
+  }catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+// const forceSync = async () => {
+//   await db.sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
+//   await db.sequelize.sync({ force: true });
+//   await db.sequelize.query('SET FOREIGN_KEY_CHECKS = 1'); // setting the flag back for security
+// };
+
+
 
 module.exports = router;
