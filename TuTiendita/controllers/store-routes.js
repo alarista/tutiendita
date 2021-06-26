@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Product } = require('../models');
 const withAuth = require('../utils/auth');
+const isCustomer = require('../utils/validateCustomer');
 
-
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, isCustomer,async (req, res) => {
     try {
       const dairy = await Product.findAll({
         attributes: ['product_name', 'price', 'stock', 'filename'],

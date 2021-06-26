@@ -2,8 +2,9 @@ const router = require('express').Router();
 // const {  } = require('../models');
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
+const isCustomer = require('../utils/validateCustomer');
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, isCustomer, async (req, res) => {
     try {
       const query = "SELECT o.id, o.status, s.store_name, c.address1, SUM(od.total) total, SUM(od.quantity) quantity "+
       "FROM storeOwner s "+

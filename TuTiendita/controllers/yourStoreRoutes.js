@@ -2,8 +2,9 @@ const router = require('express').Router();
 const { Product, StoreOwner } = require('../models');
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
+const isVendor = require('../utils/validateVendor');
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, isVendor, async (req, res) => {
     try {
       const storeOwnerData = await StoreOwner.findByPk(req.params.id, {
         attributes: ['id', 'owner_name', 'store_name'],
