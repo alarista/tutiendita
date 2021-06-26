@@ -38,8 +38,8 @@ _No installation neccesary for this project._
 \
 &nbsp;
 ### Links ❔
-* [GITHUB Repository](https://github.com/alarista/tutiendita) - `NY MET MUSEUM REPOSITORY`
-* [Live URL - Github Pages](https://ragexxx.github.io/NY_MET_MUSEUM/) - `NY MET Webpage`
+* [GITHUB Repository](https://github.com/alarista/tutiendita) - `TuTiendita Project Repository`
+* [Live URL - Github Pages](https://github.com/alarista/tutiendita) - `Live Project`
 \
 &nbsp;
 ## Authors ✒️
