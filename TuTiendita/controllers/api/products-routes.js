@@ -68,11 +68,11 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:filename', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
     where: {
-      id: req.params.id
+      filename: req.params.filename
     }
   })
   .then(productData => {
