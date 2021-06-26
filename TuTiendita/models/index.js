@@ -16,14 +16,20 @@ const Order_Details = require('./Order_Details');
 //     foreignKey: 'category_id',
 // });
 // Products belongsTo StoreOwner
-Product.belongsTo(StoreOwner, {
-  foreignKey: 'storeOwner_id',
-});
-
 // StoreOwner have many Products
 StoreOwner.hasMany(Product, {
   foreignKey: 'storeOwner_id',
+  onDelete: 'SET NULL',
+  hooks: true, 
 });
+
+Product.belongsTo(StoreOwner, {
+  foreignKey: 'storeOwner_id',
+  onDelete: 'SET NULL',
+  hooks: true, 
+});
+
+
 
 // Define customer_id FK relationship
 Orders.belongsTo(Customers, {
@@ -35,13 +41,19 @@ Customers.hasMany(Orders, {
 });
 
 // Define product_id FK relationship
-Order_Details.belongsTo(Product, {
-    foreignKey: 'product_id',
+Product.hasMany(Order_Details, {
+  foreignKey: 'product_id',
+  onDelete: 'SET NULL',
+  hooks: true, 
 });
 
-Product.hasMany(Order_Details, {
+
+Order_Details.belongsTo(Product, {
     foreignKey: 'product_id',
+    onDelete: 'SET NULL',
+    hooks: true, 
 });
+
 
 // Define order_id FK relationship
 Order_Details.belongsTo(Orders, {

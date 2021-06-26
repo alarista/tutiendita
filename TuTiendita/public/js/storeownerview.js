@@ -1,13 +1,15 @@
-
-var deleteProductButtons = document.getElementsByClassName('btn-danger')
-for (var i = 0; i < deleteProductButtons.length; i++) {
-    var button = deleteProductButtons[i]
-    button.addEventListener('click', removeProduct)
-}
+var cardEl = document.querySelector('#container4');
 
 function removeProduct(event) {
-    var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
+  var buttonClicked = event.target;
+  var textEl = event.target.textContent;
+  console.log(textEl);
+  if(textEl === 'Erase it'){
+    // console.log('Clicked a card');
+    var productName = event.target.parentElement.firstElementChild.textContent.trim();
+    // console.log("Product name:", productName);
+    buttonClicked.parentElement.parentElement.remove();
+  } 
 }
 
 var seeOrders = document.getElementById("see_orders")
@@ -76,4 +78,5 @@ const ProductFormHandler = async (event) => {
     }
   };
   
+  cardEl.addEventListener('click', removeProduct);
   registerNewProduct.addEventListener("click", ProductFormHandler);
