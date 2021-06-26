@@ -3,6 +3,10 @@ const { Product, StoreOwner } = require('../models');
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const isVendor = require('../utils/validateVendor');
+const vendorID = require('../utils/validateVendorID');
+
+router.get('/', withAuth, isVendor, vendorID, async (req, res) => {
+});
 
 router.get('/:id', withAuth, isVendor, async (req, res) => {
     try {

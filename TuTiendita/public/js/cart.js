@@ -6,17 +6,18 @@ async function addToCart(event){
     var textEl = event.target.textContent;
     // Remove all extra spaces from string src=https://futurestud.io/tutorials/remove-extra-spaces-from-a-string-in-javascript-or-node-js
     let formattedText = textEl.replace(/\s+/g, ' ').trim();
-    // console.log("Clicking");
-    // console.log(formattedText);
+    console.log("Clicking");
+    console.log(formattedText);
     if(formattedText === 'Add to cart'){
         let title = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.shop-item-title').textContent.trim();
         let price = event.target.previousElementSibling.textContent;
         let image = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.card-img-top').getAttribute("src");//.slice(8);
-        // console.log('Adding to the cart');
-        // console.log('Title: ', title);
-        // console.log('Price: ', price);
-        // console.log('Image: ', image);
+        console.log('Adding to the cart');
+        console.log('Title: ', title);
+        console.log('Price: ', price);
+        console.log('Image: ', image);
         addItemToCart(title, price, image);
+        updateCartTotal();
     }
 }
 
@@ -99,7 +100,7 @@ function addItemToCart(title, price, imageSrc) {
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
         </div>
-        <span class="cart-price cart-column">${price}</span>
+        <span class="cart-price cart-column">$${price}</span>
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">Remove</button>
@@ -121,9 +122,14 @@ function updateCartTotal() {
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         total = total + (price * quantity)
+        // console.log('price',price);
+        // console.log('quiantity',quantity);
+        // console.log('total',total)
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+    // console.log('************END************')
 }
 
+updateCartTotal();
 storeEl.addEventListener("click", addToCart);
